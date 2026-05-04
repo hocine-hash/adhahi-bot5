@@ -20,4 +20,4 @@ def check():
     except:
         pass
 
-check()
+check(send_msg()send_msg("✅ البوت يعمل بشكل صحيح")
