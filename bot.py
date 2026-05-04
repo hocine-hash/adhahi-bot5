@@ -1,7 +1,8 @@
 import requests
+import os
 
-TOKEN = "حط_توكن_هنا"
-CHAT_ID = "حط_الرقم_هنا"
+TOKEN = os.getenv("TOKEN")
+CHAT_ID = os.getenv("CHAT_ID")
 
 url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
-requests.post(url, data={"chat_id": CHAT_ID, "text": "اختبار فقط"})
+requests.post(url, data={"chat_id": CHAT_ID, "text": "🔥 البوت يعمل بنجاح"})
