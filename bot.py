@@ -1,5 +1,5 @@
-import requests
 import os
+import requests
 
 URL = "https://adhahi.dz"
 
@@ -12,12 +12,14 @@ def send_msg(text):
 
 def check():
     try:
+        send_msg("✅ البوت يعمل بشكل صحيح")  # اختبار
+
         r = requests.get(URL, timeout=10)
 
-        # شرط سوق أهراس
         if "سوق أهراس" in r.text and "غير متوفر" not in r.text:
             send_msg("🚨 الحجز فتح في سوق أهراس!\nhttps://adhahi.dz")
-    except:
-        pass
 
-check(send_msg()send_msg("✅ البوت يعمل بشكل صحيح")
+    except Exception as e:
+        print(e)
+
+check()
