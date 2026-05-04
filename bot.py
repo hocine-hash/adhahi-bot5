@@ -1,20 +1,13 @@
 import requests
-import os
 
-URL = "https://adhahi.dz"
-
-TOKEN = os.getenv("TOKEN")
-CHAT_ID = os.getenv("CHAT_ID")
+TOKEN = "ضع_التوكن_هنا"
+CHAT_ID = "7498031156"
 
 def send_msg(text):
     url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
     requests.post(url, data={"chat_id": CHAT_ID, "text": text})
 
 def check():
-    r = requests.get(URL, timeout=10)
-
-    # شرط سوق أهراس
-    if "سوق أهراس" in r.text and "غير متوفر" not in r.text:
-        send_msg("🚨 الحجز فتح في سوق أهراس!\nhttps://adhahi.dz")
+    send_msg("📡 البوت يعمل الآن")
 
 check()
