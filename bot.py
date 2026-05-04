@@ -1,7 +1,7 @@
 import requests
 
 # ضع توكن بوتك هنا (من BotFather)
-TOKEN = "PUT_YOUR_TOKEN_HERE"
+TOKEN = "8530154647:AAESvKZjbvg_zU6FMZ8DIROkIMCv-8KdwEQ"
 
 # هذا هو Chat ID الخاص بك
 CHAT_ID = "7498031156"
