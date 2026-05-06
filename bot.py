@@ -3,7 +3,7 @@ import requests
 URL = "https://adhahi.dz"
 
 TOKEN = "8530154647:AAESvKZjbvg_zU6FMZ8DIROkIMCv-8KdwEQ"
-CHAT_ID = "7498031156"
+CHAT_ID = "-1003836797030"
 
 def send_msg(text):
     try:
