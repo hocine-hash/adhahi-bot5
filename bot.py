@@ -25,17 +25,34 @@ def save_state(s):
 
 
 def check():
-    r = r = requests.get(URL, timeout=30)
-    text = r.text
+    def check():
+    try:
+        r = requests.get(
+            URL,
+            timeout=30,
+            headers={
+                "User-Agent": "Mozilla/5.0"
+            }
+        )
 
-    if "سوق أهراس" in text:
-        status = "open" if "غير متوفر" not in text else "closed"
-    else:
-        status = "unknown"
+        text = r.text
 
-    if status != get_state() and status != "unknown":
-        send("🚨 الحجز فتح في سوق أهراس" if status == "open" else "❌ الحجز مغلق")
-        save_state(status)
+        if "سوق أهراس" in text:
+            status = "open" if "غير متوفر" not in text else "closed"
+        else:
+            status = "unknown"
+
+        if status != get_state() and status != "unknown":
+            send(
+                "🚨 الحجز فتح في سوق أهراس"
+                if status == "open"
+                else "❌ الحجز مغلق"
+            )
+
+            save_state(status)
+
+    except Exception as e:
+        print("ERROR:", e)
 
 
 check()
