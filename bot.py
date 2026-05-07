@@ -25,7 +25,7 @@ def save_state(s):
 
 
 def check():
-    r = requests.get(URL, timeout=10)
+    r = r = requests.get(URL, timeout=30)
     text = r.text
 
     if "سوق أهراس" in text:
